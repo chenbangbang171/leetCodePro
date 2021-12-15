@@ -47,5 +47,37 @@ public class Goods extends AbstractGoods{
         name = builder.name;
     }
 
+    @Override
+    public void customerSubscribe(Customer customer){
+        customersObservers.add(customer);
+        //用户订阅该商品，那么该商品也在该用户的订阅列表里
+        System.out.println(customer.getName()+"成功订阅商品：" +this.getName());
+        customer.getSubscribeGoodsList().add(this);
+    }
+
+    @Override
+    public void supplierSubscribe(Supplier supplier){
+        //供应商订阅该商品
+        supplierObservers.add(supplier);
+        //该商品也在供应商的售卖列表里
+        System.out.println(supplier.getName()+"成功订阅商品：" +this.getName());
+        supplier.getSaleGoodsList().add(this);
+
+    }
+
+    @Override
+    public void customerCancelSubscribe(Customer customer){
+        this.customersObservers.remove(customer);
+        System.out.println("用户" + customer.getName()+ "取消订阅"+ this.getName() );
+        customer.getSubscribeGoodsList().remove(this);
+    }
+
+    @Override
+    public void supplierCancelSubscribe(Supplier supplier) {
+        this.supplierObservers.remove(supplier);
+        System.out.println("用户" + supplier.getName()+ "取消订阅 " +this.getName());
+        supplier.getSaleGoodsList().remove(this);
+    }
+
 
 }

@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Data
-public class Supplier extends TopSupplier {
+public class Supplier extends TopSupplier implements DoDelivery {
     private String id;
 
     private String name;
@@ -17,6 +17,7 @@ public class Supplier extends TopSupplier {
     void changePrice(BigDecimal price) {
         for (Goods goods : saleGoodsList){
             goods.setPrice(price);
+            //调用商品的通知方法，通知订阅该商品的所有顾客
             goods.nodifyCustomersForPrice(price,goods.getName());
         }
     }
@@ -24,6 +25,11 @@ public class Supplier extends TopSupplier {
     @Override
     void addGoodsCount(Goods goods, BigDecimal number) {
         goods.setNumbers(number);
-        goods.nodifySuppliersForCount(number,goods.getName());
+        goods.nodifyCustomersForCount(goods.getName());
+    }
+
+    @Override
+    public void deLivery(Order order) {
+        System.out.println("发货。。。");
     }
 }

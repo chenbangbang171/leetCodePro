@@ -6,49 +6,35 @@ import java.util.List;
 
 public  abstract class AbstractGoods {
 
-    private List<Customer> customersObservers = new ArrayList<>();
+    //拥有观察者的集合，下面进行操作的时候使用到这两个集合
+    public List<Customer> customersObservers = new ArrayList<>();
 
-    private List<Supplier> supplierObservers = new ArrayList<>();
+    public List<Supplier> supplierObservers = new ArrayList<>();
 
     /**
      * 注册订阅对象
      * @param customer    订阅对象 客户
      */
-    public void customerSubscribe(Customer customer,String goodsName){
-        customersObservers.add(customer);
-        //用户订阅该商品，那么该商品也在该用户的订阅列表里
-        System.out.println(customer.getName()+"成功订阅商品：" +goodsName );
-    }
+    public abstract void customerSubscribe(Customer customer);
 
     /**
      * 注册订阅对象
      * @param supplier    订阅对象 供应商
      */
-    public void supplierSubscribe(Supplier supplier,String goodsName){
-        //供应商订阅该商品
-        supplierObservers.add(supplier);
-        //该商品也在供应商的售卖列表里
-        System.out.println(supplier.getName()+"成功订阅商品：" +goodsName );
-    }
+    public abstract void supplierSubscribe(Supplier supplier);
 
     /**
      * 删除订阅对象 用户
      * @param customer 用户对象
      * */
-    public void customerCancelSubscribe(Customer customer,String goodsName){
-        this.customersObservers.remove(customer);
-        System.out.println("用户" + customer.getName()+ "取消订阅"+ goodsName );
-    }
+    public abstract void customerCancelSubscribe(Customer customer);
 
 
     /**
      * 删除订阅对象 供应商
      * @param supplier 用户对象
      * */
-    public void supplierCancelSubscribe(Supplier supplier){
-        this.supplierObservers.remove(supplier);
-        System.out.println("用户" + supplier.getName()+ "取消订阅 " );
-    }
+    public abstract void supplierCancelSubscribe(Supplier supplier);
 
     /**
      * 通知所有注册的客户对象，所订阅的商品价格发生变动

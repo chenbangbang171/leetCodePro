@@ -14,6 +14,8 @@ public class Order {
 
     private List<Goods> goodsList;
 
+    private String address;
+
     public void action(){
         this.orderStatus.action(this);
     }

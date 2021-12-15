@@ -12,4 +12,6 @@ public class Customer {
     private String name;
 
     private List<Goods> subscribeGoodsList;
+
+    private List<Order> orderList;
 }
