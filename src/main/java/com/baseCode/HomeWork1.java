@@ -9,18 +9,18 @@ public class HomeWork1 {
 		// int num = 150;
 		// System.out.println(s9(num));
 
-		// s10();
-		// s11();
-		// System.out.println(s12(5,8));
-		// s13(12345);
-		// s14();
-		// s15();
-		s16();
-		// s17();
-		// s18();
-		// s19();
-		// s20();
-		// s13();
+//		 s10();
+//		 s11();
+//		 System.out.println(s12(5,8));
+//		 s13(12345);
+//		 s14();
+//		 s15();
+//		s16();
+//		 s17();
+//		 s18();
+//		 s19();
+		 s20();
+
 	}
 
 	public static void s1() {
@@ -346,38 +346,38 @@ public class HomeWork1 {
 
 	public static void s20() {
 		for (int i = 1; i <= 3; i++) {
-			for (int j = i; j <= 2; j++) {
-				System.out.print("     ");
+			for (int j = i; j <= 3; j++) {
+				System.out.print("*** ");
 			}
 			for (int k = 1; k <= i; k++) {
-				System.out.print("💖");// ♥
+				System.out.print("💖💖");// ♥
 			}
 			for (int k = 1; k <= i; k++) {
 				System.out.print("💖");
 			}
 			for (int j = i; j <= 3; j++) {
-				System.out.print("     ");
+				System.out.print("#  ");
 			}
 			for (int j = i; j <= 3; j++) {
-				System.out.print("     ");
+				System.out.print("* ");
 			}
 			for (int k = 1; k <= i; k++) {
 				System.out.print("💖");// ♥
 			}
 			for (int k = 1; k <= i; k++) {
-				System.out.print("💖");
+				System.out.print("💖💖");
 			}
 			System.out.println("");
 		}
 		for (int i = 1; i <= 6; i++) {
 			for (int j = 1; j <= i; j++) {
-				System.out.print("     ");
+				System.out.print("** ");
 			}
 			for (int k = i; k <= 6; k++) {
-				System.out.print("💖");
+				System.out.print("💖💖");
 			}
 			for (int m = i; m <= 6; m++) {
-				System.out.print("💖");
+				System.out.print("💖💖");
 			}
 			System.out.println("");
 		}

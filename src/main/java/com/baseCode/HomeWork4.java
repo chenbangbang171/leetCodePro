@@ -1,4 +1,4 @@
-package main.java.baseCode;
+package com.baseCode;
 
 public class HomeWork4 {
 

@@ -1,4 +1,4 @@
-package main.java.ticket;
+package com.ticket;
 
 class SoldTest extends Thread {
 
